@@ -170,6 +170,11 @@ class PageAjax extends PageRegular
 
 		$this->loadLanguageFile('default');
 
+		if($this->Input->get('action') == 'articles')
+		{
+			$this->output(parent::getFrontendModule(0));
+		}
+
 		if ($this->Input->get('action') == 'fmd')
 		{
 			$this->output($this->getFrontendModule($this->Input->get('id')));
