@@ -403,6 +403,8 @@ class PageAjax extends PageRegular
 	{
 		$varValue = $this->replaceTags($varValue);
 
+		if($this->Input->get('plain')) die($varValue);
+
 		if (version_compare(VERSION, '2.9', '>'))
 		{
 			$varValue = json_encode(array
